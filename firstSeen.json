@@ -1170,5 +1170,16 @@
     "authelia/authelia": 1593270239,
     "msjpq/firefox-vnc": 1593296011,
     "romancin/tinymediamanager:latest": 1593662911,
-    "fithwum/minecraft": 1593713324
+    "fithwum/minecraft": 1593713324,
+    "coolasice1999/tmm-cli-cronjob:latest": 1595227336,
+    "coolasice1999/tmm:latest": 1595227337,
+    "https://raw.githubusercontent.com/Steini1984/unRAID6-Sainoid/master/unRAID6-Sanoid.plg": 1595227451,
+    "dyonr/magnetico-environment": 1595227611,
+    "fithwum/minecraft-bedrock": 1595227633,
+    "ich777/pushover-on-start": 1595227693,
+    "ich777/zandronum": 1595227711,
+    "gilbn/geoip2influx": 1595227734,
+    "alturismo/xteve_zap": 1595227778,
+    "securecompliance/gvm:11.0.1-r3": 1595227794,
+    "https://github.com/unraid/lang-zh_CN/archive/master.zip": 1595227875
 }

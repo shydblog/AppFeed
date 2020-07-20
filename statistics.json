@@ -1,5 +1,5 @@
 {
-    "caFixed": 166,
+    "caFixed": 170,
     "fixedTemplates": {
         "gfjardim's Repository": {
             "needo/nzbdrone": [
@@ -65,7 +65,10 @@
             "hernandito/docker-resourcespace": [
                 "Port referenced in webUI does not correspond with a container port defined.  Entry changed to http://[IP]:[PORT:80]/"
             ],
-            "romancin/tinymediamanager:latest": [
+            "coolasice1999/tmm-cli-cronjob:latest": [
+                "Unknown category MediaManager:"
+            ],
+            "coolasice1999/tmm:latest": [
                 "Unknown category MediaManager:"
             ]
         },
@@ -348,6 +351,9 @@
             ]
         },
         "fithwum's Repository": {
+            "fithwum/minecraft-bedrock": [
+                "No Support Link Present"
+            ],
             "fithwum/minecraft": [
                 "No Support Link Present"
             ]
@@ -442,6 +448,9 @@
             "ich777/online-check-pushover": [
                 "No category entry present"
             ],
+            "ich777/pushover-on-start": [
+                "Unknown category Other:Uncategorized"
+            ],
             "ich777/remmina": [
                 "No category entry present"
             ],
@@ -486,6 +495,9 @@
             ]
         },
         "Selfhosters Unraid Discord Repository": {
+            "gilbn/geoip2influx": [
+                "No Icon specified within the application template"
+            ],
             "rancher/rancher:latest": [
                 "Port referenced in webUI does not correspond with a container port defined.  Port Referenced does not exist in Config"
             ],

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Container version="2">
+  <Date>1592118000</Date>
+  <Name>jackettvpn</Name>
+  <Repository>dyonr/jackettvpn</Repository>
+  <Registry>https://hub.docker.com/r/dyonr/jackettvpn</Registry>
+  <Network>bridge</Network>
+  <Shell>bash</Shell>
+  <Privileged>true</Privileged>
+  <Support>https://lime-technology.com/forums/topic/73693-support-jackettvpn/</Support>
+  <Project>https://github.com/Jackett/Jackett</Project>
+  <Overview>Docker container which runs the latest headless Jackett Server while connecting to OpenVPN with iptables killswitch to prevent IP leakage when the tunnel goes down.</Overview>
+  <WebUI>http://[IP]:[PORT:9117]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/DyonR/docker-templates/master/Templates/jackettvpn/jackettvpn-template.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/DyonR/docker-templates/master/Icons/jackettvpn/jackettvpn-icon.png</Icon>
+  <ExtraParams>--restart unless-stopped</ExtraParams>
+  <PostArgs></PostArgs>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>9117</HostPort>
+        <ContainerPort>9117</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir></HostDir>
+      <ContainerDir>/blackhole</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/jackettvpn/</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>yes</Value>
+      <Name>VPN_ENABLED</Name>
+      <Mode></Mode>
+    </Variable>
+    <Variable>
+      <Value>2ev4gtibdq1bduihhgfjjl38</Value>
+      <Name>VPN_USERNAME</Name>
+      <Mode></Mode>
+    </Variable>
+    <Variable>
+      <Value>1sam81hz17lymwenxayhvl5c</Value>
+      <Name>VPN_PASSWORD</Name>
+      <Mode></Mode>
+    </Variable>
+    <Variable>
+      <Value>192.168.0.0/24</Value>
+      <Name>LAN_NETWORK</Name>
+      <Mode></Mode>
+    </Variable>
+    <Variable>
+      <Value>1.1.1.1,1.0.0.1</Value>
+      <Name>NAME_SERVERS</Name>
+      <Mode></Mode>
+    </Variable>
+    <Variable>
+      <Value>99</Value>
+      <Name>PUID</Name>
+      <Mode></Mode>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>PGID</Name>
+      <Mode></Mode>
+    </Variable>
+    <Variable>
+      <Value>002</Value>
+      <Name>UMASK</Name>
+      <Mode></Mode>
+    </Variable>
+    <Variable>
+      <Value>one.one.one.one</Value>
+      <Name>HEALTH_CHECK_HOST</Name>
+      <Mode></Mode>
+    </Variable>
+    <Variable>
+      <Value>1</Value>
+      <Name>DISABLE_IPV6</Name>
+      <Mode></Mode>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>ADDITIONAL_PORTS</Name>
+      <Mode></Mode>
+    </Variable>
+  </Environment>
+  <Config Name="WEBUI_PORT" Target="9117" Default="9117" Mode="tcp" Description="Container Port: 9117" Type="Port" Display="always" Required="true" Mask="false">9117</Config>
+  <Config Name="VPN_ENABLED" Target="VPN_ENABLED" Default="yes" Mode="" Description="Container Variable: VPN_ENABLED" Type="Variable" Display="always" Required="false" Mask="false">yes</Config>
+  <Config Name="VPN_USERNAME" Target="VPN_USERNAME" Default="" Mode="" Description="Container Variable: VPN_USERNAME" Type="Variable" Display="always" Required="false" Mask="false">2ev4gtibdq1bduihhgfjjl38</Config>
+  <Config Name="VPN_PASSWORD" Target="VPN_PASSWORD" Default="" Mode="" Description="Container Variable: VPN_PASSWORD" Type="Variable" Display="always" Required="false" Mask="true">1sam81hz17lymwenxayhvl5c</Config>
+  <Config Name="LAN_NETWORK" Target="LAN_NETWORK" Default="192.168.0.0/24" Mode="" Description="Container Variable: LAN_NETWORK" Type="Variable" Display="always" Required="true" Mask="false">192.168.0.0/24</Config>
+  <Config Name="NAME_SERVERS" Target="NAME_SERVERS" Default="1.1.1.1,1.0.0.1" Mode="" Description="Container Variable: NAME_SERVERS" Type="Variable" Display="always" Required="false" Mask="false">1.1.1.1,1.0.0.1</Config>
+  <Config Name="Blackhole Path" Target="/blackhole" Default="" Mode="rw" Description="Container Path: /blackhole" Type="Path" Display="always" Required="false" Mask="false"/>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="UMASK" Target="UMASK" Default="002" Mode="" Description="Container Variable: UMASK" Type="Variable" Display="advanced" Required="false" Mask="false">002</Config>
+  <Config Name="HEALTH_CHECK_HOST" Target="HEALTH_CHECK_HOST" Default="one.one.one.one" Mode="" Description="Container Variable: HEALTH_CHECK_HOST" Type="Variable" Display="advanced" Required="false" Mask="false">one.one.one.one</Config>
+  <Config Name="DISABLE_IPV6" Target="DISABLE_IPV6" Default="1" Mode="" Description="Container Variable: DISABLE_IPV6" Type="Variable" Display="advanced" Required="false" Mask="false">1</Config>
+  <Config Name="ADDITIONAL_PORTS" Target="ADDITIONAL_PORTS" Default="" Mode="" Description="Container Variable: ADDITIONAL_PORTS" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="config" Target="/config" Default="/mnt/user/appdata/jackettvpn" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/jackettvpn/</Config>
+  <Category>Downloaders: Tools:Utilities</Category>
+  <Description>Docker container which runs the latest headless Jackett Server while connecting to OpenVPN with iptables killswitch to prevent IP leakage when the tunnel goes down.</Description>
+  <templatePath>/tmp/GitHub/AppFeed/templates/NordsRepository/Templates/jackettvpn/jackettvpn-template.xml</templatePath>
+</Container>
